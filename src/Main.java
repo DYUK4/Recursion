@@ -9,27 +9,25 @@ public class Main {
         /*System.out.print(" Введите номер этажа: ");
         int floor = kb.nextInt();
         Elevator(floor);*/
-
-
         System.out.print("Введите число: ");
         double fact = kb.nextInt();
-        System.out.println("%.0f! = %.0f".formatted(fact, Fractorial(fact)));
+        System.out.println("%.0f! = %.0f".formatted(fact, Factorial(fact)));
         //Fractorial(fact);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        System.out.print("Введите основание степени: ");
+        int a = kb.nextInt();
+        System.out.print("Введите показатель степени: ");
+        int n = kb.nextInt();
+        System.out.println("%d^%d = %.0f".formatted(a,n, Power(a,n)));
 
-        /*System.out.print("Введите целое число и степень: ");
-        double number = kb.nextInt();
-        int degre = kb.nextInt();
-        System.out.println("%.0f^%d = %.0f".formatted(number, degre, Power(number, degre)));
-*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
         System.out.print("Введите предельное число: ");
-        int fib = kb.nextInt();
+        long fib = kb.nextLong();
         //System.out.println(Fibonacci(fib));
-        Fibonacc(fib, 0, 1);
+        Fibonacci(fib,0,1);
     }
-
-
-    static void Elevator(int floor) {
+    /*static void Elevator(int floor) {
         if (floor == 0) {
             System.out.println("Вы в подвале");
             return;
@@ -38,33 +36,37 @@ public class Main {
         Elevator(floor - 1);
         System.out.println("Вы на " + floor + " этаже");
 
-    }
+    }*/
 
-    static double Fractorial(double fact) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    static double Factorial(double fact) {
         /*if(fact < 0) return 0;
         if (fact == 1)
         return 1;
         return fact * Fractorial(fact - 1);
         */
-        return fact < 0 ? 0 : fact == 0 ? 1 : fact * Fractorial(fact - 1);
+        return fact < 0 ? 0 : fact == 1 ? 1 : fact * Factorial(fact - 1);
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    static double Power(double a, int n) {
+        //if(degre == 0) return 1;
+        //return number * Power(number,degre - 1 );
+        //return degre == 0 ? 1 : degre > 0 ? number * Power( number,degre - 1 ) : 1/ number * Power( number,degre +1 );
+        //return n == 0 ? 1 : n > 0 ? a * Power(a,n - 1) : 1 / a * Power(a,n + 1);
+        return n == 0 ? 1 : n > 0 ? a * Power(a,n - 1) : 1 / Power(a,-n);
+        //return n == 0 ? 1 : n > 0 ? a * Power(a,n - 1) : 1 / Power(a,Math.abs(n));
 
     }
 
-    //static double Power(double number, int degre) {
-        /*if(degre == 0) return 1;
-       return number * Power(number,degre - 1 );*/
-
-        //return degre == 0 ? 1 : degre > 0 ? number * Power( number,degre - 1 ) : 1/ number * Power( number,degre +1 );
-
-
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //static int Fibonacci(int fib){
        /* if(fib == 0 || fib == 1) return fib;
         return Fibonacci(fib - 1) + Fibonacci(fib - 2);*/
-
-        static void Fibonacc(long fib, long a, long b ){
+        static void Fibonacci(long fib, long a, long b ){
             if (a > fib) return;
             System.out.print(a + "\t");
-            Fibonacc(fib, b, a + b);
+            Fibonacci(fib, b, a + b);
         }
     }
 
