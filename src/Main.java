@@ -21,9 +21,9 @@ public class Main {
         double degre = kb.nextInt();
         System.out.println("число %.0f^%.0f = %.0f".formatted(number,degre,Power(number,degre)));
 
-        System.out.print("Введите число предела: ");
+        /*System.out.print("Введите число предела: ");
         int fib = kb.nextInt();
-        Fibonacci(fib);
+        Fibonacci(fib);*/
     }
 
     static void Elevator(int floor) {
@@ -49,15 +49,12 @@ public class Main {
        return number * Power(number,degre - 1 );
 
     }
-    static void Fibonacci(int fib){
-        if(fib == 0 || fib == 1) {
-            System.out.println(fib);
-            return;
-        }
-        //Fibonacci(fib - 1) + Fibonacci(fib - 2);
+    /*static void Fibonacci(int fib){
+        if(fib == 0 || fib == 1) return fib;
+        return Fibonacci(fib - 1) + Fibonacci(fib - 2);
 
     }
-
+*/
 }
 
 //stack
