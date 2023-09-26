@@ -6,9 +6,9 @@ public class Main {
 //main(null);
         Scanner kb = new Scanner(System.in);
 
-        System.out.print(" Введите номер этажа: ");
+        /*System.out.print(" Введите номер этажа: ");
         int floor = kb.nextInt();
-        Elevator(floor);
+        Elevator(floor);*/
 
         System.out.print("Введите число: ");
         double fact = kb.nextDouble();
@@ -19,7 +19,7 @@ public class Main {
         System.out.print("Введите целое число и степень: ");
         double number = kb.nextInt();
         double degre = kb.nextInt();
-        System.out.println("число %.0f^%.0f = %.0f".formatted(number,degre,Power(number,degre)));
+        System.out.println("%.0f^%.0f = %.0f".formatted(number,degre,Power(number,degre)));
 
         /*System.out.print("Введите число предела: ");
         int fib = kb.nextInt();
